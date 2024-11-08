@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning: Computer Science</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+       /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #FFD700; /* Gold color on hover */
+}
+
+/* Hero section styles */
+.hero {
+    background-image: url('download (4).jfif'); /* Replace with your image */
+    height: 500px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+/* Container styles */
+.container {
+    padding: 20px;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+/* General Styles */
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #007BFF; /* Primary color for headings */
+}
+
+/* Courses Section */
+#courses {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Space between items */
+}
+
+.course {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px; /* Space between courses */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    flex: 1 1 30%; /* Allow flex-grow and set a base width */
+    min-width: 250px; /* Minimum width for responsiveness */
+}
+
+.course:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.course h3 {
+    color: #007BFF; /* Blue color for course titles */
+}
+
+/* Resources Section */
+#resources {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#resources ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+#resources li {
+    margin: 10px 0; /* Space between list items */
+}
+
+#resources a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#resources a:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover for emphasis */
+}
+
+/* Testimonials Section */
+#testimonials {
+    display: flex;
+    flex-direction: column; /* Stack testimonials vertically */
+    align-items: center; /* Center align testimonials */
+}
+
+.testimonial {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px; /* Space between testimonials */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effect */
+    width: 80%; /* Set width for consistency */
+}
+
+.testimonial:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+/* Blog Section */
+#blog {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center; /* Center align text */
+}
+
+#blog a {
+    color: #007BFF; /* Link color */
+    text-decoration: none; /* Remove underline */
+}
+
+#blog a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Contact Section */
+#contact {
+    background-color: #e9ecef; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#contact h2 {
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+#contact input, 
+#contact textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Full width inputs */
+}
+
+#contact input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#contact input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #courses {
+        flex-direction: column; /* Stack courses vertically on smaller screens */
+    }
+}
+
+/* Course and testimonial card styles */
+.course, .testimonial {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.course h3, .testimonial p {
+    margin-bottom: 10px;
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 500px; /* Max width for the modal */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form styles */
+.modal form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.modal input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Contact Form Styles */
+#contact {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#contact h2 {
+    margin-bottom: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .course, .testimonial {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        margin: 5px 0;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>E-Learning in Computer Science</h1>
+    <nav>
+        <a href="#courses">Courses</a>
+        <a href="#resources">Resources</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#" id="loginLink">Login</a> <!-- Login link -->
+    </nav>
+</header>
+
+<div class="hero">
+    <h1>Welcome to E-Learning</h1>
+</div>
+
+<div class="container">
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <div class="course">
+            <h3>Introduction to Programming</h3>
+            <p>Learn the basics of programming using Python.</p>
+        </div>
+        <div class="course">
+            <h3>Web Development</h3>
+            <p>Build modern websites with HTML, CSS, and JavaScript.</p>
+        </div>
+        <div class="course">
+            <h3>Data Structures and Algorithms</h3>
+            <p>Master the fundamental concepts of data structures.</p>
+        </div>
+    </section>
+
+    <section id="resources">
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="#">Free E-books</a></li>
+            <li><a href="#">Online Tutorials</a></li>
+            <li><a href="#">Webinars</a></li>
+        </ul>
+    </section>
+
+    <section id="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial">
+            <p>"This platform has transformed my learning experience!" - Alex</p>
+        </div>
+        <div class="testimonial">
+            <p>"I love the variety of courses offered here." - Jamie</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <h2>Latest Blog Posts</h2>
+        <p>Check out our latest articles on computer science topics.</p>
+        <a href="#">Understanding Algorithms</a><br>
+        <a href="#">The Future of Web Development</a><br>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <input type="submit" value="Send Message">
+        </form>
+    </section>
+</div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeLogin">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <input type="submit" value="Login">
+        </form>
+        <p>Don't have an account? <a href="#" id="signupLink">Sign Up</a></p>
+    </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeSignup">&times;</span>
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <p>Already have an account? <a href="#" id="loginLinkModal">Login</a></p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2023 E-Learning in Computer Science. All rights reserved.</p>
+</footer>
+
+<script>
+    // Get the modal
+    var loginModal = document.getElementById("loginModal");
+    var signupModal = document.getElementById("signupModal");
+
+    // Get the button that opens the modal
+    var loginLink = document.getElementById("loginLink");
+    var closeLogin = document.getElementById("closeLogin");
+    var signupLink = document.getElementById("signupLink");
+    var closeSignup = document.getElementById("closeSignup");
+    var loginLinkModal = document.getElementById("loginLinkModal");
+
+    // Open login modal
+    loginLink.onclick = function() {
+        loginModal.style.display = "block";
+    }
+
+    // Open signup modal
+    signupLink.onclick = function() {
+        loginModal.style.display = "none";
+        signupModal.style.display = "block";
+    }
+
+    // Close login modal
+    closeLogin.onclick = function() {
+        loginModal.style.display = "none";
+    }
+
+    // Close signup modal
+    closeSignup.onclick = function() {
+        signupModal.style.display = "none";
+    }
+
+    // Open login from sign up
+    loginLinkModal.onclick = function() {
+        signupModal.style.display = "none";
+        loginModal.style.display = "block";
+    }
+
+    // Close modals when clicking outside of them
+    window.onclick = function(event) {
+        if (event.target == loginModal) {
+            loginModal.style.display = "none";
+        }
+        if (event.target == signupModal) {
+            signupModal.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>
